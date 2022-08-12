@@ -1,6 +1,6 @@
 package com.xia.digun.passmetacore.factory;
 
-import com.xia.digun.passmetacore.model.contextmodel.context.Context;
+import com.xia.digun.passmetacore.model.contextmodel.Context;
 
 /**
  * description: 上下文工厂

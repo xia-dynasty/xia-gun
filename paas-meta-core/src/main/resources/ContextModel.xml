@@ -38,9 +38,9 @@
         </context>
 
         <context parent="AbstractContext">
-            <id>FormContext</id>
-            <key>Form</key>
-            <name>表单上下文</name>
+            <id>EntityContext</id>
+            <key>Entity</key>
+            <name>实体上下文</name>
         </context>
     </contexts>
 </model>

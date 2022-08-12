@@ -1,7 +1,6 @@
 package com.xia.digun.passmetacore.annotation;
 
 import java.lang.annotation.Documented;
-import java.lang.annotation.Target;
 
 /**
  * description 聚合根
@@ -11,5 +10,6 @@ import java.lang.annotation.Target;
  * @version 1.0
  */
 @Documented
-public @interface Aggregate {
+@Entity
+public @interface AggregateRoot {
 }

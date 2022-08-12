@@ -1,4 +1,4 @@
-package com.xia.digun.passmetacore.model.contextmodel.context;
+package com.xia.digun.passmetacore.model.contextmodel;
 
 /**
  * description: 聚合上下文

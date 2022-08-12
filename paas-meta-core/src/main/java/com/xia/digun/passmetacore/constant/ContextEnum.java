@@ -1,4 +1,4 @@
-package com.xia.digun.passmetacore.model.contextmodel.constant;
+package com.xia.digun.passmetacore.constant;
 
 import java.util.Arrays;
 
@@ -21,7 +21,7 @@ public enum ContextEnum {
 
     AGGREGATE("Aggregate"),
 
-    FORM("Form");
+    FORM("Entity");
 
     private String key;
 

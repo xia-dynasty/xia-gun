@@ -1,11 +1,7 @@
 package com.xia.digun.passmetacore;
 
-import com.xia.digun.passmetacore.model.contextmodel.context.AbstractContext;
-import com.xia.digun.passmetacore.model.utils.XmlParseUtils;
-import org.dom4j.Document;
+import com.xia.digun.passmetacore.model.DomainModel;
 import org.dom4j.DocumentException;
-
-import java.net.URL;
 
 /**
  * description:
@@ -16,8 +12,8 @@ import java.net.URL;
  */
 public class Main {
     public static void main(String[] args) throws DocumentException {
-        URL url = Main.class.getResource(AbstractContext.META_MODEL_ROOT_PATH);
-        Document parse = XmlParseUtils.parse(url);
-        XmlParseUtils.bar(parse);
+        DomainModel domainModel = new DomainModel();
+        final DomainModel domainModel1 = domainModel.getDomainModel();
+        System.out.println(domainModel1.getVersion());
     }
 }

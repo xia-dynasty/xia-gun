@@ -1,11 +1,14 @@
-package com.xia.digun.passmetacore.model.contextmodel.context;
+package com.xia.digun.passmetacore.model.contextmodel;
 
 import com.xia.digun.passmetacore.factory.ContextFactory;
+import com.xia.digun.passmetacore.model.AbstractModel;
+import com.xia.digun.passmetacore.model.DomainModel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,8 +22,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Slf4j
-public abstract class AbstractContext implements Context {
-    public static final String META_MODEL_ROOT_PATH = "/metamodel.model";
+public abstract class AbstractContext extends AbstractModel implements Context {
 
     private String id;
     private String key;
@@ -47,7 +49,8 @@ public abstract class AbstractContext implements Context {
      */
     @Override
     public List<Context> listContexts() {
+        List<Context> contexts = new ArrayList<>();
 
-        return null;
+        return contexts;
     }
 }
