@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--<!DOCTYPE models SYSTEM "./dtd/model.dtd">-->
-<domain-model>
+<meta-model>
     <version>0.0.1.100</version>
     <models>
         <model>
@@ -27,4 +27,4 @@
             <resourcePath>/FieldModel.xml</resourcePath>
         </model>
     </models>
-</domain-model>
+</meta-model>

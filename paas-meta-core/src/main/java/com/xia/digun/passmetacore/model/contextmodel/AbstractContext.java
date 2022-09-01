@@ -1,8 +1,6 @@
 package com.xia.digun.passmetacore.model.contextmodel;
 
 import com.xia.digun.passmetacore.factory.ContextFactory;
-import com.xia.digun.passmetacore.model.AbstractModel;
-import com.xia.digun.passmetacore.model.DomainModel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,7 +20,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Slf4j
-public abstract class AbstractContext extends AbstractModel implements Context {
+public abstract class AbstractContext implements Context {
 
     private String id;
     private String key;

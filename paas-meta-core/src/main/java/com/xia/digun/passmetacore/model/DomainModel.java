@@ -1,6 +1,5 @@
 package com.xia.digun.passmetacore.model;
 
-import com.xia.digun.passmetacore.Main;
 import com.xia.digun.passmetacore.annotation.AggregateRoot;
 import com.xia.digun.passmetacore.constant.SysConstant;
 import com.xia.digun.passmetacore.constant.exception.MetaException;
@@ -30,7 +29,7 @@ public class DomainModel {
 
     public DomainModel getDomainModel() {
         try {
-            URL url = Main.class.getResource(SysConstant.META_MODEL_ROOT_PATH);
+            URL url = this.getClass().getResource(SysConstant.META_MODEL_ROOT_PATH);
             final Document document = XmlParseUtils.getDocument(url);
             final List<Model> nodes = XmlParseUtils.getNodes(document, "/domain-model/models/model", Model.class);
             final String version = XmlParseUtils.getNodeText(document, "/domain-model/version");
@@ -55,13 +54,12 @@ public class DomainModel {
     }
 
     public List<AbstractModel> listByResourcePath(String resourcePath) {
-        List<AbstractModel> models;
+        List<AbstractModel> models = null;
         try {
-            URL url = Main.class.getResource(resourcePath);
+            URL url = this.getClass().getResource(resourcePath);
             final Document document = XmlParseUtils.getDocument(url);
-
         } catch (DocumentException e) {
-            throw new RuntimeException(e);
+            throw new MetaException();
         }
         return models;
     }
