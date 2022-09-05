@@ -11,8 +11,7 @@ import lombok.NoArgsConstructor;
  * @version 1.0
  */
 @Data
-@NoArgsConstructor
-public class Model {
+public abstract class Model {
     private String id;
     private String name;
     private String resourcePath;

@@ -9,7 +9,9 @@ import org.dom4j.io.SAXReader;
 
 import java.lang.reflect.Field;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * description: xml 解析工具
@@ -50,7 +52,10 @@ public class XmlParseUtils {
     public static <T> T getNode(Node node, Class<T> clazz) throws IllegalAccessException, InstantiationException {
         final T t = clazz.newInstance();
         final Field[] fields = clazz.getDeclaredFields();
-        for (Field field : fields) {
+        final Field[] parentFields = clazz.getSuperclass().getDeclaredFields();
+        final List<Field> fieldList = Arrays.stream(fields).collect(Collectors.toList());
+        fieldList.addAll(Arrays.stream(parentFields).collect(Collectors.toList()));
+        for (Field field : fieldList) {
             field.setAccessible(true);
             final String name = field.getName();
             final String val = node.selectSingleNode(name).getText();

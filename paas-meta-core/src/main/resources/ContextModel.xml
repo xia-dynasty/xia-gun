@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model>
-    <props>
+    <propertites>
         <id>ContextProperties</id>
         <key>Properties</key>
         <name>上下文属性</name>
         <resourcePath>/ContextModelProperties.xml</resourcePath>
-    </props>
+    </propertites>
     <contexts>
         <context>
             <id>AbstractContext</id>

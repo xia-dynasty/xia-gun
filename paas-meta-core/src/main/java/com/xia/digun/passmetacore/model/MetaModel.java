@@ -1,11 +1,12 @@
 package com.xia.digun.passmetacore.model;
 
+import com.xia.digun.passmetacore.annotation.AggregateRoot;
+import com.xia.digun.passmetacore.constant.ResultStatusEnum;
 import com.xia.digun.passmetacore.constant.SysConstant;
 import com.xia.digun.passmetacore.constant.exception.MetaException;
 import com.xia.digun.passmetacore.utils.XmlParseUtils;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.apache.commons.lang3.StringUtils;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 
@@ -21,11 +22,13 @@ import java.util.List;
  */
 @Data
 @NoArgsConstructor
-public class MetaModel {
+@AggregateRoot
+public class MetaModel extends Model {
     private String version;
-    private List<Model> models;
+    private List<DomainModel> models;
 
-    public List<Model> listModels() {
+
+    /*public DomainModel getDomainModel() {
         try {
             URL url = this.getClass().getResource(SysConstant.META_MODEL_ROOT_PATH);
             final Document document = XmlParseUtils.getDocument(url);
@@ -34,8 +37,31 @@ public class MetaModel {
             this.setModels(nodes);
             this.setVersion(version);
         } catch (DocumentException e) {
-            throw new MetaException(e.getMessage());
+            throw new RuntimeException(e);
         }
         return this;
     }
+
+    public List<AbstractModel> listModelById(String modelId) {
+        if (this.getModels() == null) {
+            this.getDomainModel();
+        }
+        final String resourcePath = this.getModels().stream().filter(model -> StringUtils.endsWith(modelId, model.getId()))
+                .map(Model::getResourcePath).findFirst().orElse(null);
+        if (StringUtils.isEmpty(resourcePath)) {
+            throw new MetaException();
+        }
+        return listByResourcePath(resourcePath);
+    }
+
+    public List<AbstractModel> listByResourcePath(String resourcePath) {
+        List<AbstractModel> models = null;
+        try {
+            URL url = this.getClass().getResource(resourcePath);
+            final Document document = XmlParseUtils.getDocument(url);
+        } catch (DocumentException e) {
+            throw new MetaException();
+        }
+        return models;
+    }*/
 }

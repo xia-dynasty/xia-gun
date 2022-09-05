@@ -3,28 +3,28 @@
 <meta-model>
     <version>0.0.1.100</version>
     <models>
-        <model>
+        <domain-model>
             <id>ContextModel</id>
             <name>上下文模型</name>
             <resourcePath>/ContextModel.xml</resourcePath>
-        </model>
+        </domain-model>
 
-        <model>
+        <domain-model>
             <id>FormModel</id>
             <name>表单模型</name>
             <resourcePath>/FormModel.xml</resourcePath>
-        </model>
+        </domain-model>
 
-        <model>
+        <domain-model>
             <id>EntityModel</id>
             <name>实体模型</name>
             <resourcePath>/EntityModel.xml</resourcePath>
-        </model>
+        </domain-model>
 
-        <model>
+        <domain-model>
             <id>FieldModel</id>
             <name>字段模型</name>
             <resourcePath>/FieldModel.xml</resourcePath>
-        </model>
+        </domain-model>
     </models>
 </meta-model>
