@@ -1,14 +1,7 @@
 package com.xia.digun.passmetacore.constant.exception;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 import com.xia.digun.passmetacore.constant.ResultStatusEnum;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * description: paas 异常
@@ -39,8 +32,13 @@ public class PaaSException extends RuntimeException {
     }
 
     public PaaSException(ResultStatusEnum resultStatusEnum, Object payload, String message) {
-        super(message, new RuntimeException());
-        this.setMessage(message);
+        this(resultStatusEnum, payload, message == null ? resultStatusEnum.getMessage() : message,
+                new RuntimeException(message == null ? resultStatusEnum.getMessage() : message));
+    }
+
+    public PaaSException(ResultStatusEnum resultStatusEnum, Object payload, String message, Throwable throwable) {
+        super(message == null ? resultStatusEnum.getMessage() : message, throwable);
+        this.setMessage(message == null ? resultStatusEnum.getMessage() : message);
         this.setPayload(payload);
         this.setResultStatusEnum(resultStatusEnum);
     }

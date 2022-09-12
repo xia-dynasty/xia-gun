@@ -2,7 +2,7 @@ package com.xia.digun.passmetacore.model;
 
 import com.xia.digun.passmetacore.constant.ResultStatusEnum;
 import com.xia.digun.passmetacore.constant.SysConstant;
-import com.xia.digun.passmetacore.constant.exception.MetaException;
+import com.xia.digun.passmetacore.constant.exception.PaaSException;
 import com.xia.digun.passmetacore.utils.NullObject;
 import com.xia.digun.passmetacore.utils.XmlParseUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -36,7 +36,7 @@ public class ModelReader {
             metaModel.setModels(models);
             metaModel.setVersion(version);
         } catch (DocumentException e) {
-            throw new MetaException(ResultStatusEnum.SYSTEM_ERROR, e.getMessage(), "元数据解析异常");
+            throw new PaaSException(ResultStatusEnum.SYSTEM_ERROR, e.getMessage(), "元数据解析异常");
         }
         return metaModel;
     }

@@ -1,8 +1,11 @@
 package com.xia.digun.passmetacore;
 
 import com.google.gson.Gson;
+import com.xia.digun.passmetacore.constant.ResultStatusEnum;
+import com.xia.digun.passmetacore.constant.exception.PaaSException;
 import com.xia.digun.passmetacore.model.MetaModel;
 import com.xia.digun.passmetacore.model.ModelReader;
+import com.xia.digun.passmetacore.utils.NullObject;
 
 /**
  * description:
@@ -13,8 +16,6 @@ import com.xia.digun.passmetacore.model.ModelReader;
  */
 public class Main {
     public static void main(String[] args) {
-        ModelReader reader = new ModelReader();
-        final MetaModel metaModel = reader.listMetaModel();
-        System.out.println(new Gson().toJson(metaModel));
+
     }
 }

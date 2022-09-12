@@ -1,16 +1,9 @@
 package com.xia.digun.passmetacore.model;
 
 import com.xia.digun.passmetacore.annotation.AggregateRoot;
-import com.xia.digun.passmetacore.constant.ResultStatusEnum;
-import com.xia.digun.passmetacore.constant.SysConstant;
-import com.xia.digun.passmetacore.constant.exception.MetaException;
-import com.xia.digun.passmetacore.utils.XmlParseUtils;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.dom4j.Document;
-import org.dom4j.DocumentException;
 
-import java.net.URL;
 import java.util.List;
 
 /**

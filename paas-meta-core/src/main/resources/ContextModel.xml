@@ -8,36 +8,30 @@
     </propertites>
     <contexts>
         <context>
-            <id>AbstractContext</id>
-            <key>Abstract</key>
-            <name>抽象上下文</name>
-        </context>
-
-        <context parent="AbstractContext">
             <id>SystemContext</id>
             <key>System</key>
             <name>系统上下文</name>
         </context>
 
-        <context parent="AbstractContext">
+        <context>
             <id>AppContext</id>
             <key>App</key>
             <name>应用上下文</name>
         </context>
 
-        <context parent="AbstractContext">
+        <context>
             <id>BoundedContext</id>
             <key>Bounded</key>
             <name>限界上下文</name>
         </context>
 
-        <context parent="AbstractContext">
+        <context>
             <id>AggregateContext</id>
             <key>Aggregate</key>
             <name>聚合上下文</name>
         </context>
 
-        <context parent="AbstractContext">
+        <context>
             <id>EntityContext</id>
             <key>Entity</key>
             <name>实体上下文</name>
